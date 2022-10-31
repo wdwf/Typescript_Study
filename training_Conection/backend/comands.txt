@@ -1,0 +1,31 @@
+# Instalando o typescript
+yarn ad typescript -D
+
+# Iniciando a configuração do typescript
+yarn tsc --init
+yarn tsc
+
+# Compilando em tempo real
+yarn add ts-node-dev -D
+"scripts": {
+  "dev": "ts-node-dev --respawn --transpile-only src/index.ts"
+}
+
+#
+
+$ yarn add morgan cors
+
+yarn add @types/express -D
+
+yarn add @types/morgan @types/cors -D
+
+# Instale o TypeORM pelo site oficial
+yarn add typeorm
+yarn add reflect-metadata
+yarn add @types/node -D
+yarn add pg
+
+
+Entities -> São as entidades do banco de dados cada Entity criada é uma tabela, as entidades são definidas por classes
+
+Controllers -> Serve para deixar mais limpo e intuitivo o arquivo de rotas e seus metodos

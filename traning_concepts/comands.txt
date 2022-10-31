@@ -1,0 +1,27 @@
+-iniciar projeto
+$ yarn init -y
+
+-instalar o typescript
+yarn add -D typescript
+
+-install express
+yarn add express
+yarn add @types/express -D -> essa tipagem serve para nos ajudar com o intelissence do editor
+
+
+-convertendo o codigo em js (de modo bruto)
+yarn tsc [pasta onde esta o arquivo] -> yarn tsc src/index.ts
+
+-configurando o tyoescript (de modo certo)
+yarn tsc --init
+yarn tsc
+
+-compilando em tempo real
+yarn add ts-node-dev -D
+
+
+-criando o frontend
+yarn create vite frontend --template react-ts
+
+-instalando no backend o cors necessario para poder fazer conecção e requisiçoes
+yarn add cors

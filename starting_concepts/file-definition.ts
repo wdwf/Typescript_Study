@@ -26,13 +26,13 @@
     soma(1, 2)//3
     soma('1', '2')//12 -> Opaaa!
 
-  * Avisa sobre possiveis erros.
+  * Alem disso o typescript avisa sobre possiveis erros.
     
   //### DESVANTAGENS ###//
 
   * Necessita ser compilado
   * Aprendizado inicial dos tipos e boas praticas
-  * Erros nem sempre muito claros ou então muti grandes
+  * Erros nem sempre muito claros ou então muito grandes
   
 
   //### INICIANDO ###//
@@ -60,6 +60,7 @@
 
 
 //### TYPES ###//
+//Definição dos tipos primitivos
 
 // boollean (true/false)
 let isOpen: boolean
@@ -77,7 +78,7 @@ total = 0xada
 let items: number[] | string[]
 items = ['a', 'b', 'c']
 
-//Outra forma de assimilar o tipo:
+//Outra forma de assimilar o tipo é pela notação generic:
 let values: Array<number>
 values = [1,2,3]
 
@@ -94,7 +95,7 @@ enum Colors {
   black = '#000',
 }
 
-// any (booleano, string, number ...) NÃO É LEGAL
+// any (booleano, string, number ...) NÃO É LEGAL USAR ELE
 // -> Qualquer coisa
 
 let coisa: any
@@ -123,6 +124,9 @@ carta = {
   key: "fi"
 }
 
+
+
+
 //### TYPE INFERENCE ###//
 
 /*
@@ -137,6 +141,10 @@ window.addEventListener("click", (e) => {
   e.target
 })
 
+
+
+
+
 //### TYPE ALIASE E UNION ###//
 
 /*
@@ -145,9 +153,10 @@ window.addEventListener("click", (e) => {
 
   o ALIASE é usado quando funçoes diferentes apresentam os mesmos 
   parametros com os mesmos tipos, assim é possivel definir e reutilizar
+  determinad type.
 */
 
-// type alias
+// type alias -> vem a ser um atalho,para definir o tipo suportado pela varaivel
 type Uid = number | string | undefined
 type Platform = 'Windows' | 'Linux' | 'Mac os'
 
@@ -172,13 +181,20 @@ logUser("147", "Jom")
 // renderPlatform('ios') -> erro
 
 
+
+
+
+
 //### ESTENDENDO TYPE ALIASES COM INTERSECTION ###//
 
 /*
   o uso do ? serve para indicar que a passagem de valor para
   determinado atributo seja opcional como se definissimos o type undefined
 
-  INTERSECTION - seria a implementação dos atibutos necessarios a um terceiro, 
+  Ao estendermos os types aliases seria como se unissemos os types 
+  com todos os atributos que estão presentes nos mesmos.
+
+  INTERSECTION - seria a implementação dos atibutos necessarios a um terceiro. 
   exemplo: os atributos de A e B são necessarios para criar o elemento C 
 */
 
@@ -186,6 +202,7 @@ type AccountInfo = {
   id: number;
   name: string;
   email?: string;
+  getInfo?: (name: string) => void 
 }
 
 const accountOne: AccountInfo = {
@@ -209,7 +226,7 @@ const char: CharInfo = {
   level: 10
 }
 
-// Intersection
+// Intersection - união dos tipos
 type PlayerInfo = AccountInfo & CharInfo
 
 const player:PlayerInfo = {
@@ -221,20 +238,30 @@ const player:PlayerInfo = {
 
 
 
+
+
+
+
 //### CLASSES ###//
 
 /*
+
+  modifiers são as declarações que definem o modo de leitura da determinada classe
+
   Modifiers - (Public, Private, Protected, Readonly)
     Public: Metodo implicito, fornece acesso completo ao elemento
     Private: Não permite acesso direto ao elemento
     Protected: Só pode ser acessado pela classe q o criou
+              - permite passar a outras classes porem não ser editavem igual private
     Readonly: Só pode ter seu valor lido 
   
 
   Accessor - get, set
 
 
-  Abstract class - classe abstrata é a que não possibilita criar objetos a partir dela porem permite herda-lá/extende-la
+  Abstract class -  classe abstrata é a que NÃO possibilita criar objetos a partir dela 
+                    porem permite herda-lá/extende-la. Servem como modelos, para outras classes
+                    mas não se quer criar nada apartir dela.
 
     abstract class chassi {
       ...
@@ -300,16 +327,27 @@ john.setLevel = 999;
 
 
 
+
+
+
+
+
 //### INTERFACES ###//
 
 /*
   É um conjunto de dados para descrever a estrutura de um objeto
 
-  Nesta interface podemos utilizar o modifier readonly, estender com extendes
-  e implementar uma classe com interface 
+  Diferente o type aliases que tambem poderia descrever um objeto mas tb um conjunto de
+  tipos primitivos a interface trabalha exlusivamente para objetos.
+
+  No type interface podemos:
+   - utilizar o modifier readonly para que não seja possivel altera-lo.
+   - estender com outras interfaces com extends
+   - implementar uma classe com interface 
 */
 
 interface Game {
+  id?: string | number;
   title : string;
   description?: string;
   readonly genre: string;
@@ -332,13 +370,15 @@ console.log(tlou.title);
 console.log(tlou.genre);// OK
 // tlou.genre = "Drama" // ERROR
 
+//fazendo um type-guard pra se certificar q o metodo existe
+if (tlou.getSimilars) {
+  tlou.getSimilars(tlou.title)
+}
 
 
-tlou.getSimilars(tlou.title)
-
-
+//Extends
 interface DLC extends Game {
-  originalGame: Game;
+  originalGame: Game; //Terá todo o conteudo do game original
   newContent: string[];
 }
 
@@ -353,6 +393,8 @@ const leftbehind: DLC = {
 
 //Implementando uma classe com interface
 /*
+  Implements seria utilizar uma interface em uma classe
+
   Ao fazer isso se faz necessario ter todos os elementos
   presentes na interface, fazendo a interface assim servir como um padrão de config 
 */
@@ -370,6 +412,12 @@ class CreateGame implements Game {
     this.platform = p;
   }
 }
+
+
+
+
+
+
 
 //### TYPE ALIAS VC TYPE INTERFACE ###//
 
@@ -392,7 +440,7 @@ interface spinOff {
   extra: string
 }
 
-//INTERSECTION / EXTENDS
+//Type aliases usa INTERSECTION (&) / interface usa EXTENDS
 
 //Fazendo o intersection ao realizar a criação de um HistoryCollection do mesmo tipo
 //será necessario ter o title e o extra
@@ -465,3 +513,131 @@ const $: JQuery = {
   a: "bla",
   b: "foo"
 }
+
+/*
+  Type é recomendado na maioria das vezes
+
+  Interface tem mais vantagem, quando se tem que criar libs pois assim 
+  elas são mais extensiveis, alem de serem recomendadas para criar objetos e
+  classes (POO)
+
+  O MAIS IMPORTANTE É A CONSISTENCIA!!!
+*/
+
+
+
+
+
+
+// ### GENERICS ### //
+
+/*
+  Seria o modo se tornar um metodo generico onde o mesmo possa ser usado
+  em outras partes sem problemas mesmo com passagems de parametro diferentes
+  tendo seu retorno definido.
+
+  O generic veio para que dentro da linguagem tipada ainda tenhamos uma flexibilidade.
+
+  - O exemplo do codigo abaixo se dá pela seguinte linha de traciocinio: É uma função 
+  de estado que determina seu tipo assim que é atribuido um valor pela primeira vez.
+
+  As definição das letras temos como um padrão sendo:
+  S => States
+  T => Type
+  K => Key
+  V => Value
+  E => Element
+
+*/
+//Definido o <S> essa função vai poder trabalhar com
+//alguma coisa do tipo S
+function useState<S extends number | string = string>() {
+  let state: S;
+
+  function getState() {
+    return state;
+  }
+
+  function setState(newState: S) {
+    state = newState
+  }
+
+  return { getState, setState };
+}
+
+const newState = useState();
+// const newState = useState<number>(); //-> Como foi definido o tipo padrão
+// é necessario passar o outro tipo para uso.
+
+newState.setState("foo"); //Determina como uma string
+console.log(newState.getState());
+
+// newState.setState(123)    //Dá erro ja foi definido como uma string
+// console.log(newState.getState());
+
+
+
+
+
+
+//  ### TYPES UTILITIES ### //
+/*
+  São utilitarios para se trabalhar com os type seja ele aliases ou interface
+
+  usado para que depois da criação do objeto  mesmo não seja modificavel 
+
+  - Readonly deixa os campos apenas para leitura
+  - Partial deixa o preenchimento dos campos opcional só naquele momento(local onde foi definido).
+  - Pick vai pegar um conjunto de chaves definidas
+  - Omit baseado no tipo definido ele vai omitir o que se informar
+*/
+
+type TODO = {
+  title: string;
+  description: string;
+  completed: boolean;
+}
+
+const todo1: Readonly<TODO> = {
+  title: "Assistir Brooklin 99",
+  description: "Anotar as palavras diferentes em ingles",
+  completed: false,
+}
+
+console.log(todo1);
+
+// todo1.completed = true; //erro
+
+//Função que retorna um objeto novo possibilitando alter o campo desejado
+//Partial<TODO> define os campos de modo opcional
+function updateTodo(todo: TODO, fieldsToUpdate: Partial<TODO>) {
+  return { ...todo, ...fieldsToUpdate }
+}
+
+
+//Teremos uma variavel do tipo Todo que será uma copia de 'todo' 
+//e nesta variavel atualizaremos o campo copia do todo1 onde será feito uma 
+const todo2: TODO = updateTodo(todo1, { completed: true });
+console.log(todo2);
+
+////pick
+type TodoPreview = Pick<TODO, "title" | "completed">
+
+const todo3: TodoPreview = {
+  title: "Fechar Ghost of Tsushima",
+  completed: false
+}
+
+type TodoPreview2 = Omit<TODO, "description">
+
+const todo4: TodoPreview = {
+  title: "Fechar God of War",
+  completed: false
+}
+
+
+
+
+
+//  ### DECORATORS ### //
+
