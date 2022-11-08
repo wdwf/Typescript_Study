@@ -1,0 +1,5 @@
+yarn create vite [nameDirectory] --template react-ts
+yarn
+yarn add styled-components
+yarn add @types/styled-components -D
+react

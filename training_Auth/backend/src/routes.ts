@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { RoomController } from "./controllers/RoomController";
-import { SubjectController } from "./controllers/SubjectController";
+import { UserController } from "./controllers/userController";
+import { authMiddleware } from "./middlewares/authMiddleware";
 
 const routes = Router();
 
@@ -8,10 +8,11 @@ routes.get('/ping', (req, res) => {
   res.json('pong')
 })
 
-routes.post('/subject', new SubjectController().create);
-routes.post('/room', new RoomController().create);
-routes.get('/room', new RoomController().list)
-routes.post('/room/:idRoom/create', new RoomController().createVideo);
-routes.post('/room/:idRoom/subject', new RoomController().roomSubject);
+routes.post('/signup', new UserController().create)
+routes.post('/signin', new UserController().login)
+
+//Abaixo desse middleware as rotas devem ser todas autenticadas
+routes.use(authMiddleware)
+routes.get('/profile', new UserController().getProfile)
 
 export default routes;

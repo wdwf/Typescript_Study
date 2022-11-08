@@ -31,6 +31,10 @@ $ yarn add -D typescript ts-node-dev @types/express @types/node
 $ yarn add express pg typeorm dotenv reflect-metadata
 $ yarn add dotenv
 $ yarn add express-async-errors
+$ yarn add bcrypt
+$ yarn add @types/bcrypt
+$ yarn add jsonwebtoken
+$ yarn add @types/jsonwebtoken
 
 
 Entities -> São as entidades do banco de dados cada Entity criada é uma tabela, as entidades são definidas por classes
