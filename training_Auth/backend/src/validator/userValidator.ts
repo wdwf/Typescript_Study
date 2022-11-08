@@ -1,12 +1,12 @@
 import Joi from "joi";
 
-type Tvalidate = {
+interface IValidate {
   schema: object;
   payload?: any;
   validate: any;
 }
 
-const userValidator = (schema: Tvalidate) => (payload: Tvalidate) =>
+const userValidator = (schema: IValidate) => (payload: IValidate) =>
   schema.validate(payload, { abortEarly: false });
 
 
