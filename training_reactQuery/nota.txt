@@ -1,0 +1,3 @@
+React Query
+
+Facilita a requisição de dados de APIs. 

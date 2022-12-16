@@ -5,8 +5,6 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 import { validateCreate } from "../validator/userValidator"
-import { CreateUser } from "../service/userService";
-
 
 export class UserController {
   async create(req: Request, res: Response) {

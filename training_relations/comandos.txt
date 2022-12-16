@@ -1,0 +1,37 @@
+-Inicialization
+yarn init -y
+
+-install express
+yarn add express
+
+-
+yarn add typescript ts-node-dev @types/express -D
+
+-init typescript
+yarn tsc --init
+
+-install typeORM
+yarn add typeorm reflect-metadata pg
+
+-create migration
+yarn typeorm migration:create ./src/migrations/CreateCategories
+
+-UP = DOWN -> comandos usados para fazer e desfazer açoes da migrations
+## ADD NO PACKAGE: "migration:down": "typeorm-ts-node-commonjs -d ./src/db.ts migration:revert"
+#Criado a entidade rodamos o comando $ yarn run migration:generate
+#Com a migration criada podemos analiza-la modificar algo e finamente usar o comando: $ yarn run migation:run
+#Para reverter algo $ yarn typeorm migration:down
+
+-A relação no arquivo em entidades vai de cima para baixo ou seja
+* quantos videos por categoria
+  * many to one
+  * Varios videos para uma categoria
+
+-criando o backend
+yarn create vite backend --template react-ts
+
+-install express
+yarn add express
+yarn add @types/express -D -> essa tipagem serve para nos ajudar com o intelissence do editor
+
+-install typeORM

@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 import { UnauthorizedError } from "../helpers/api-erros";
 
 type JwtPayload = {
-  id: number
+  id: string
 }
 
 export const authMiddleware = async (
