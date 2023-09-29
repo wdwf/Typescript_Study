@@ -1,6 +1,6 @@
 export enum Categoria {
-  invalido,
-  leve,
-  medio,
-  pesado,
+  invalido = "invalido",
+  leve = "leve",
+  medio = "medio",
+  pesado = "pesado",
 }
