@@ -213,11 +213,31 @@ Programação orientada a objetofoi criada com o intuito de aproximar o mundo re
     ---------------------
     RELACIONAMENTO ENTRE CLASSES
 
-    É o aspecto de ligar uma classe a outra.
-    existe variso tipos de relacionamento
+    O relacionamento entre objetos define como eles vão interagir ou colaborar para executar uma 
+    operação em uma aplicação.
+
+    Associação: Falamos sobre associação entre dois objetos quando cada um deles pode usar o outro, 
+    mas também cada um deles pode existir sem o outro. Não há dependência entre eles.
+    > Associação simples: Uma classe usa outra classe como parte de suas operações, mas não há uma dependência forte. Por exemplo, uma classe Carro pode ter uma associação com uma classe Motor, onde o motor é parte do carro.
+
+    Colaboração: A colaboração declara que dois objetos estão colaborando quando um objeto faz 
+    uso de outro objeto para completar uma operação.
+    Um exemplo seria para salvar e recuperar os detalhes do clientes, a classe ClienteRepository 
+    usa um objeto Cliente para salvar e recuperar os dados.
+
+    Agregação: é um tipo especial de associação onde as informações de um objeto (chamado objeto-todo) 
+    precisam ser complementados pelas informações contidas em um ou mais objetos de outra classe 
+    (chamados objetos-parte)
+
+
 
     Agregação: todo relacionamento tem um papel que seria o verbo (ter, disputar, ) (tem 1)
+      > Por exemplo, uma classe Universidade pode ter uma agregação com a classe Aluno, 
+      indicando que uma universidade contém vários alunos. A diferença chave é que os 
+      objetos "parte" podem existir independentemente do objeto "todo".
 
+
+    Associação: 
     ---------------------
 
 */
