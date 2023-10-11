@@ -218,26 +218,95 @@ Programação orientada a objetofoi criada com o intuito de aproximar o mundo re
 
     Associação: Falamos sobre associação entre dois objetos quando cada um deles pode usar o outro, 
     mas também cada um deles pode existir sem o outro. Não há dependência entre eles.
-    > Associação simples: Uma classe usa outra classe como parte de suas operações, mas não há uma dependência forte. Por exemplo, uma classe Carro pode ter uma associação com uma classe Motor, onde o motor é parte do carro.
+    > Associação simples: Uma classe usa outra classe como parte de suas operações, mas não há uma
+     dependência forte. Por exemplo, uma classe Carro pode ter uma associação com uma classe Motor, 
+     onde o motor é parte do carro.
 
     Colaboração: A colaboração declara que dois objetos estão colaborando quando um objeto faz 
     uso de outro objeto para completar uma operação.
     Um exemplo seria para salvar e recuperar os detalhes do clientes, a classe ClienteRepository 
     usa um objeto Cliente para salvar e recuperar os dados.
 
+
     Agregação: é um tipo especial de associação onde as informações de um objeto (chamado objeto-todo) 
     precisam ser complementados pelas informações contidas em um ou mais objetos de outra classe 
     (chamados objetos-parte)
-
-
-
-    Agregação: todo relacionamento tem um papel que seria o verbo (ter, disputar, ) (tem 1)
       > Por exemplo, uma classe Universidade pode ter uma agregação com a classe Aluno, 
       indicando que uma universidade contém vários alunos. A diferença chave é que os 
       objetos "parte" podem existir independentemente do objeto "todo".
 
 
-    Associação: 
+    Composição: 
+    A composição também é uma relação todo-parte, mas os objetos "parte" são criados e destruídos 
+    junto com o objeto "todo". Por exemplo, uma classe Casa pode ter uma composição com a classe 
+    Quarto, indicando que a casa é composta por vários quartos. Quando a casa é destruída, 
+    os quartos também são destruídos.
+
+    Herança:
+    A herança é um relacionamento onde uma classe (subclasse ou classe derivada) herda 
+    atributos e métodos de outra classe (superclasse ou classe base). Por exemplo, uma 
+    classe Cachorro pode herdar de uma classe Animal. Isso permite a reutilização de código 
+    e a modelagem de hierarquias de classes.
+
     ---------------------
+
+    - Abordando um pouco mais sobre Herança
+
+    Navegaçao pela herança (arvore de herança):
+          - Raiz -> superClasse
+          - Ancestral -> subClasse
+
+    Se essa arvore é lida de cima para baixo é especilização
+    Se ela é lida de baixo para cima é generalização
+
+    Tipos de herança
+    - Herança de implementação:
+      Na herança de implementação, também conhecida como herança por inclusão ou herança de interface, uma classe
+        derivada herda os atributos e métodos da classe base (ou classe pai) e pode adicionar novos atributos
+        e métodos ou modificar os existentes. Basicamente, a classe derivada estende a funcionalidade da
+        classe base sem alterar sua estrutura fundamental.
+        ex:
+          class Animal {
+              void eat() {
+                  System.out.println("Animal is eating.");
+              }
+          }
+
+          class Dog extends Animal {
+              void bark() {
+                  System.out.println("Dog is barking.");
+              }
+          }
+
+    - Herança para diferença:
+      A herança para diferença, também conhecida como herança por substituição ou herança por modificação,
+      envolve criar uma nova classe derivada que substitui ou modifica o comportamento de métodos da classe
+        base. Nesse caso, a classe derivada é uma especialização da classe base, refinando ou personalizando
+        seu comportamento.
+
+      class Shape {
+          void draw() {
+              System.out.println("Drawing a shape.");
+          }
+      }
+
+      class Circle extends Shape {
+          @Override
+          void draw() {
+              System.out.println("Drawing a circle.");
+          }
+      }
+
+    Conceitos--
+    Abstrato e final
+    Podem ser classe(Abstrato e final) ou metodos(Abstrato e final)
+    -Classe abstrata não pode ser instanciada (Não pode gerar objetos) só pode servir como progenitora (classe pai).
+    -Metodo abstrato pode ser declarado mas não implementado na progenitora (classe pai).
+    -Classe Final não pode ser herdada por outra classe. Obrigatoriamente folha.
+    -Metodo Final não pode ser sobrescrito pelas sub-classes. Obrigatoriamente herdado
+
+    ---------------------
+
+    - Polimorfismo (Poli = muito, morfo = forma) muitas formas de fazer a mesma coisa
 
 */
