@@ -1,7 +1,7 @@
 {
-  "name": "exercise_one",
+  "name": "exercise_two",
   "version": "1.0.0",
-  "description": "Este tipo de paradigma (normas orientadoras) se concentra na modelagem de objetos da vida real em codigo.",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
