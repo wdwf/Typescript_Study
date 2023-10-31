@@ -133,25 +133,8 @@ Programação orientada a objetofoi criada com o intuito de aproximar o mundo re
                 > Reservado
 
 
-  ** UML -> Linguagem de modelagem unificada
-      - Conceitos:
-          Diagrama de classes
-          Corpo de um objeto seguindo a uml seria seguindo o exemplo ja citado acima.
 
-  Mudando a visibilidade
-          - O que é visivilidade: Indicam o nivel de acesso aos componentes (atributos/metodos) internos
-          de uma classe.
-
-          Seguinda a UML podemos definir 3 simbologias
-          + -> Público (public)
-              Possibilidade de utilizar em qualquer lugar que o mesmo esteja disponivel
-              - QUEM TEM ACESSO: A classe atual e todas as outras classes.
-          - -> Privado (private)
-              Apenas O criador do componente pode utilizar
-              - QUEM TEM ACESSO: apenas a classe atual
-          # -> Protegido (protected)
-              Apenas disponivel para quem tem autorização (para os decendentes de uma classe)
-              - QUEM TEM ACESSO: a classe atual e todas as suas sub-classes
+          
 
   ❗Nota: Quando temos um componente com a visibilidade private temos que usar metodos 
   acessores (get/set) e este elemento só estara disponivel dentro da classe
