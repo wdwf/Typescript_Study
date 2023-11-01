@@ -7,5 +7,6 @@ let warrior: Warrior = new Warrior('Barbado');
 let priest: Priest = new Priest('Bob');
 
 console.log('mage: ', mage);
+mage.baterEmRetirada();
 console.log('warrior: ', warrior);
 console.log('priest: ', priest);

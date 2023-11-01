@@ -1,6 +1,6 @@
 import { Util } from './Util';
 
-export class Personagem {
+export abstract class Personagem {
   protected _nome: string;
   protected _armadura: number;
   protected _vidaMaxima: number;
@@ -13,7 +13,7 @@ export class Personagem {
     this._vidaAtual = Util.randomizar(40, this._vidaMaxima);
   }
 
-  baterEmRetirada(): void {
-    console.log('Run...');
-  }
+  public abstract atacar(): string;
+
+  public abstract defender(atacante: Personagem): number;
 }
