@@ -18,7 +18,7 @@ Vamos examinar cada princípio, um por um. Seguindo a sequência da abreviação
 
 ---
 
-# \***\*Princípio da responsabilidade única\*\***
+# Princípio da responsabilidade única
 
 O princípio da responsabilidade única declara que **uma classe deve fazer apenas uma coisa e, portanto, deve ter apenas uma razão para ser modificada**.
 
@@ -37,7 +37,7 @@ Esse princípio visa separar comportamentos para que, se surgirem erros como res
 
 ---
 
-# \***\*Princípio aberto/fechado\*\***
+# Princípio aberto/fechado
 
 O princípio de aberto/fechado diz que as **classes devem estar abertas para extensão, mas fechadas para modificação**.
 
@@ -53,7 +53,7 @@ Este princípio visa estender o comportamento de uma classe sem alterar o compor
 
 ---
 
-# \***\*Princípio da substituição de Liskov\*\***
+# Princípio da substituição de Liskov
 
 O princípio da substituição de Liskov declara que as subclasses devem ser substituíveis por suas classes de base.
 
@@ -74,7 +74,7 @@ Esse princípio visa impor consistência para que a classe pai ou sua classe fil
 
 ---
 
-# \***\*Princípio da segregação de interfaces\*\***
+# Princípio da segregação de interfaces
 
 Reforça a ideia de se programar orientadoa objeto
 

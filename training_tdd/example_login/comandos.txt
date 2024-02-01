@@ -1,0 +1,24 @@
+yarn init -y
+
+mkdir src
+
+yarn add express
+
+yarn add sequelize pg
+
+yarn add sequelize-cli -D
+
+yarn sequelize init
+
+yarn sequelize migration:create --name:create-users
+
+yarn sequelize db:migrate
+
+yarn add nodemon -D
+
+> biblioteca de testes
+
+yarn add jest -D
+yarn jest --init
+
+yarn dotenv
