@@ -2,34 +2,34 @@
 
 ### O que é POO?
 
-Este tipo de paradigma (normas orientadoras) se concentra na modelagem de objetos da vida real em codigo.
+Este tipo de paradigma (normas orientadoras) se concentra na modelagem de objetos da vida real em código.
 
 ### Por que programar com esse paradigma?
 
-Pois ele vai nos trazer diversos beneficios, como legibilidade do codigo ou manutenção do codigo.
+Pois ele vai nos trazer diversos benefícios, como legibilidade do código ou manutenção do código.
 
-🚧Nota: Esse paradigma não é facil de se entender ou de se desenvolver no começo pois terá que ter mais organização, tera trabalho com mais arquivos, tera conversação entre objetos, então leia bastante e se possivel mais de uma vez.
+🚧Nota: Esse paradigma não é fácil de se entender ou de se desenvolver no começo pois terá que ter mais organização, tera trabalho com mais arquivos, tera conversação entre objetos, então leia bastante e se possível mais de uma vez.
 
 Programação orientada traz:
 
-    C - confiavel
+    C - confiável
     O - oportuno - dividir
-    M - manutenive
-    E - extensivel - pode adicionar novas funcuionalidade
-    R - reutilizavel
+    M - manutenível
+    E - extensível - pode adicionar novas funcionalidade
+    R - reutilizável
     N - natural
 
 ### O que é um objeto?
 
-Combina a estrutura de dados (atributos) e o comportamento dos dados (operação/metodos) em uma unica entidade.
+Combina a estrutura de dados (atributos) e o comportamento dos dados (operação/métodos) em uma única entidade.
 
-Um objeto pode ser definido como um conceito, uma abstração, algo com limites nitidos e significado em relação ao mundo. Logo um objeto deriva de uma classe (é criado apartir de uma classe).
+Um objeto pode ser definido como um conceito, uma abstração, algo com limites nítidos e significado em relação ao mundo. Logo um objeto deriva de uma classe (é criado a partir de uma classe).
 
-ex: temos a classe LIVRO que é abrangente e 'generica'. Ao instanciarmos/criarmos um objeto especifico com base nessa classe poderiamos ter um livro especifico com titulo definido, numero de paginas definida, cor do livro, tema ...
+ex: temos a classe LIVRO que é abrangente e 'genérica'. Ao instanciarmos/criarmos um objeto especifico com base nessa classe poderíamos ter um livro especifico com titulo definido, numero de paginas definida, cor do livro, tema ...
 
 ### Mas o que é classe?
 
-Classes são os modelos ou moldes nos quais surgirão os objetos. As classes definem algumas propriedades e métodos que deverão fazer parte do objeto que derivar dela ou então, como dizemos, os objetos que serão instanciados a partir dela. Logo classe é uma abstração do que há em comum (em termos de caracteristicas e comportamentos) a um conjunto de objetos.
+Classes são os modelos ou moldes nos quais surgirão os objetos. As classes definem algumas propriedades e métodos que deverão fazer parte do objeto que derivar dela ou então, como dizemos, os objetos que serão instanciados a partir dela. Logo classe é uma abstração do que há em comum (em termos de características e comportamentos) a um conjunto de objetos.
 
 Exemplo de classe:
 
@@ -37,13 +37,13 @@ Exemplo seguindo a UML
 
     ----------
     - Identificador
-    | Mamifero |
+    | Mamífero |
     ----------
     - Atributo
     | Nome     |
     | Energia  |
     ----------
-    - Metodo
+    - Método
     | Comer()  |
     | Mover()  |
     ----------
@@ -60,7 +60,7 @@ Exemplo seguindo a UML
     | Modelo     |
     | Cor        |
     ----------
-    - Metodo
+    - Método
     | Escrever()  |
     | Tampar()    |
     | Destampar() |
@@ -75,18 +75,18 @@ Exemplo seguindo a UML
       modelo: Caracteres
       cor: Caracteres
       ponta: Real
-      carga: Interiro
+      carga: Inteiro
       tampada: Logico
 
 
-      Metodo rabiscar() {
+      Método rabiscar() {
           se (tampada) então
               escreva("Erro")
           senão
               escreva("rabiscando")
       }
 
-      Metodo tampar()
+      Método tampar()
     }
 
     Como criar um objeto?
@@ -96,28 +96,28 @@ Exemplo seguindo a UML
 
 🚧 Nota de resumo:
 
-- Classe - Define os atributo e metodos comuns que serão compartilhados por um objeto.
+- Classe - Define os atributo e métodos comuns que serão compartilhados por um objeto.
 - Objeto - Um elemento criado a partir da classe.
-- Classes estão para objetos assim como as plantas arquitetonicas estção para as casas.
+- Classes estão para objetos assim como as plantas arquitetônicas estão para as casas.
 
-### Divição
+### Divisão
 
 - Dividida em 4 pilares
 
 ## <strong>Abstração:</strong>
 
-Abstração - Seria o ato de criar uma classe ou metodo abstrato.
+Abstração - Seria o ato de criar uma classe ou método abstrato.
 
-Classe Abstrata -> quando uma classe é abstrata, ela não deve ser instanciada uma vez que seus metodos estão incompletos ela só servira para efeitos de herança
+Classe Abstrata -> quando uma classe é abstrata, ela não deve ser instanciada uma vez que seus métodos estão incompletos ela só servira para efeitos de herança
 
-Metodo abstrato -> é apenas a definição de metodos que serão implementados por subclasses
+Método abstrato -> é apenas a definição de métodos que serão implementados por subclasses
 
 ❗Exemplo de classe abstrata:
 -> Classe abstrata são as que não permitem qualquer tipo de instancia.
 São classes feitas especialmente para serem modelos para suas classes
 derivadas. As classes derivadas, via de regra, deverão sobrescrever
 os métodos para realizar a implementação dos mesmos.
-Logo é feito a entensão da classe com 'extends'.
+Logo é feito a extensão da classe com 'extends'.
 
 ```
       abstract class Animal {
@@ -141,11 +141,11 @@ exemplo de objeto abstrato da vida real
 
 - ALMOÇO
 - Atributos
-  > Horario
+  > Horário
   > Local
   > Data
   > Valor
-- Metodo
+- Método
   > Realizar Almoço
   > Finalizar almoço
   > Pagar a conta
@@ -156,7 +156,7 @@ exemplo de objeto abstrato da vida real
   > Finalizado
   > Reservado
 
-### Setup inicial
+<!-- ### Setup inicial
 
 ### Criando uma instancia de uma classe
 
@@ -164,31 +164,31 @@ exemplo de objeto abstrato da vida real
 
 ### Construtor
 
-### Construtor com parametros
+### Construtor com parâmetros
 
 ### Definindo atributos no construtor
 
 ### ts-node
 
-### Metodos
+### Métodos
 
-### Metodos com retorno
+### Métodos com retorno
 
-### Metodos com parametros
+### Métodos com parâmetros -->
 
 ## <strong>Encapsulamento:</strong>
 
-São capsulas que seguem padroes e servem para proteger a aplicação, isolando o maximo possivel as nossas classes, visa aumentar a flexibilidade melhorar a manutenção e aumentar a extensibilidade do software.
+São capsulas que seguem padrões e servem para proteger a aplicação, isolando o máximo possível as nossas classes, visa aumentar a flexibilidade melhorar a manutenção e aumentar a extensibilidade do software.
 
 ### Modificadores de acesso
 
-- O que é visivilidade: Indicam o nivel de acesso aos componentes (atributos/metodos) internos de uma classe.
+- O que é visibilidade: Indicam o nível de acesso aos componentes (atributos/métodos) internos de uma classe.
 
 - Um bom objeto encapsulado possui uma interface bem definida
 
 - Interface é a lista de serviços fornecidos por um componente. É o contato com o mundo exterior, que define o que pode ser feito com um objeto dessa classe.
 
-- É como se fosse a capa do controle remoto onde especifica as funçoes do controle
+- É como se fosse a capa do controle remoto onde especifica as funções do controle
 
 ```
     - UML
@@ -199,13 +199,13 @@ São capsulas que seguem padroes e servem para proteger a aplicação, isolando 
     ...
 
 
-    - Defindo uma interface
+    - Definindo uma interface
     export interface Controlador {
       public ligar(): void
     }
 ```
 
-- Na interface os metodos são todos publicos e seguindo o padrao UML é definido apenas os metodos e não seus funcionamentos.
+- Na interface os métodos são todos públicos e seguindo o padrão UML é definido apenas os métodos e não seus funcionamentos.
 
 - Uma classe implementa uma interface
 
@@ -215,7 +215,7 @@ São capsulas que seguem padroes e servem para proteger a aplicação, isolando 
 class ControleRemoto implements Controlador {
   privated Ligado: boolean;
   ...
-  //-> Estamos fazendo como se fosse uma sobre escrita no metodo (@Overwrite)
+  //-> Estamos fazendo como se fosse uma sobre escrita no método (@Overwrite)
   ligar():void {
     this.setLigado(true)
   }
@@ -232,9 +232,9 @@ class ControleRemoto implements Controlador {
 
     - No contexto do desenvolvimento do sistema de biblioteca, você estaria modelando essas entidades, seus relacionamentos e as operações que podem ser realizadas, como emprestar um livro, devolvê-lo ou adicionar um novo livro ao acervo. Esse conjunto de conceitos e regras que fazem parte do sistema de biblioteca constitui o "domínio" desse software.
 
-O sentido de usarmos modificadores de acesso, é para que possamos proteger nosso codigo e consequentemente o usuario. Fazendo um paralelo com a vida real seria proteger o usuario dos componentes quimicos da pilha onde ele pode acessar o funcionamento da pilha mas não o que há dentro dela.
+O sentido de usarmos modificadores de acesso, é para que possamos proteger nosso código e consequentemente o usuario. Fazendo um paralelo com a vida real seria proteger o usuario dos componentes quimicos da pilha onde ele pode acessar o funcionamento da pilha mas não o que há dentro dela.
 
-Seguinda a UML podemos definir 3 simbologias
+Seguindo a UML podemos definir 3 simbologias
 
 \*\* UML -> Linguagem de modelagem unificada
 
@@ -246,28 +246,28 @@ Seguinda a UML podemos definir 3 simbologias
         Apenas O criador do componente pode utilizar
         - QUEM TEM ACESSO: apenas a classe atual
         - Atributos normalmente são privados
-        - Metodos quem implementam rotinas internas (metodos auxiliares devem ser privados)
+        - Métodos que implementam rotinas internas (métodos auxiliares devem ser privados)
 
     # -> Protegido (protected)
-        Apenas disponivel para quem tem autorização (para os decendentes de uma classe)
+        Apenas disponível para quem tem autorização (para os descendentes de uma classe)
         - QUEM TEM ACESSO: a classe atual e todas as suas sub-classes
 
-❗Nota: Quando temos um componente com a visibilidade private temos que usar metodos
-acessores (get/set) e este elemento só estara disponivel dentro da classe
+❗Nota: Quando temos um componente com a visibilidade private temos que usar métodos
+acessores (get/set) e este elemento só estará disponível dentro da classe
 
-❗Nota: Quando temos um comp. com a visibilidade protected apenas a classe Pai (onde esta esta sendo criado o componente) e os filhos que vem de herança poderam acessar esse elemento
+❗Nota: Quando temos um comp. com a visibilidade protected apenas a classe Pai (onde esta esta sendo criado o componente) e os filhos que vem de herança poderão acessar esse elemento
 
-### METODOS ACESSORES (get, set)
+### MéTODOS ACESSORES (get, set)
 
-São metodos que dão acesso a uma determinada coisa
+São métodos que dão acesso a uma determinada coisa
 
 - Getters -> Pega/Acessa algo
   - Possui retorno
 - Setters -> Modifica/Atribui algo
   - Não possui retorno
-  - Recebe por parametro o valor a ser inserido no atributo
+  - Recebe por parâmetro o valor a ser inserido no atributo
 
-Nota: Voce tambem pode optar por deixar esses metodos privados para executar algo especifico dentro da propria classe.
+Nota: Voce também pode optar por deixar esses métodos privados para executar algo especifico dentro da própria classe.
 
 **Definindo Get e Set**
 
@@ -275,7 +275,7 @@ Nota: Voce tambem pode optar por deixar esses metodos privados para executar alg
 class Pessoa {
   constructor(
     private _nome: string,
-        |-> é uma convensão no javascript utilizar "_" para definir variavels privadas
+        |-> é uma convenção no javascript utilizar "_" para definir variáveis privadas
   ) {}
 
   public get nome(): string {
@@ -300,10 +300,10 @@ class Pessoa {
 estante = new estante()
 
 meusDocs = e.getTotalDocs()
-    |-> O metodo get acessa o valor do atributo e retorna o mesmo dando assim segurança
+    |-> O método get acessa o valor do atributo e retorna o mesmo dando assim segurança
 
 e.setTotalDocs(doc)
-    |-> O metodo set Define um novo valor pelo parametro
+    |-> O método set Define um novo valor pelo parametro
 ```
 
 ## <strong>Herança:</strong>
@@ -322,7 +322,7 @@ Tendo o pensamento de:
 - Cachorro é uma raça -> Não cachorro tem uma raça logo é feito a composição
 
 ```
-class Cachorro extende de Animal { //-> O uso do extends siguinifica que esta herdando
+class Cachorro extende de Animal { //-> O uso do extends significa que esta herdando
     private _nome: string
     private _raca: Raca  //-> isso seria a composição ter o tipo definido como 'Raca'
 }
@@ -331,6 +331,36 @@ class Cachorro extende de Animal { //-> O uso do extends siguinifica que esta he
 Podemos não permitir que uma classe seja herdada
 
 - Basta definirmos o construtor da classe como privado
+
+**Composição:** envolve a construção de objetos complexos através da combinação de objetos mais simples. Em vez de depender fortemente da herança, a composição permite criar estruturas mais flexíveis e reutilizáveis, combinando objetos para formar unidades maiores.
+
+
+```
+class Engine {
+  start(): void {
+    console.log('Engine started');
+  }
+}
+
+class Car {
+  private engine: Engine;
+
+  constructor() {
+    this.engine = new Engine();
+  }
+
+  startCar(): void {
+    this.engine.start();
+    console.log('Car started');
+  }
+}
+
+// Uso da composição
+const myCar = new Car();
+myCar.startCar();
+```
+
+**Nota:** Neste exemplo, Car possui uma instância privada de Engine. Isso é um exemplo de composição, onde a classe Car é composta por um objeto da classe Engine. Através da composição, a classe Car pode aproveitar o comportamento do Engine sem herdar todas as complexidades da hierarquia de herança.
 
 ### RELACIONAMENTO ENTRE CLASSES
 
@@ -353,12 +383,12 @@ Composição: A composição também é uma relação todo-parte, mas os objetos
 
 **Um pouco mais sobre herança:**
 
-Navegaçao pela herança (arvore de herança):
+Navegação pela herança (arvore de herança):
 
 - Raiz -> superClasse
 - Ancestral -> subClasse
 
-Se essa arvore é lida de cima para baixo é especilização
+Se essa arvore é lida de cima para baixo é especialização
 
 Se ela é lida de baixo para cima é generalização
 
@@ -414,14 +444,14 @@ Polimorfismo vem de poli -> muitas, morfismo -> formas
 
 O conceito principal do polimorfismo é a capacidade de tratar objetos de diferentes classes de maneira uniforme, desde que esses objetos implementem uma mesma interface ou herdem de uma mesma classe base. Em outras palavras, o polimorfismo permite que você acesse métodos ou atributos de objetos de diferentes classes sem se preocupar com os detalhes específicos da implementação de cada classe.
 
-Todo metodo tem uma assinatura e você deve diferenciar assinatura igual e diferentes.
+Todo método tem uma assinatura e você deve diferenciar assinatura igual e diferentes.
 
-A assinatura do metodo consistes em:
+A assinatura do método consistes em:
 
 - Quantidade e os tipos dos parametros
 
 ```
--- Estes metodos tem a mesma assinatura --
+-- Estes métodos tem a mesma assinatura --
 public calcMedia(n1: number, n2: number): number {}
 public calcMedia(v1: number, v2: number): string {}
 
